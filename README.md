@@ -26,7 +26,9 @@ const transporter = nodemailer.createTransport({
   }
 });
 
-mongoose.connect('mongodb://localhost:27017/myfirstdatabase')
+const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost:27017/myfirstdatabase';
+
+mongoose.connect(mongoURI)
   .then(() => console.log('Connected to MongoDB successfully!'))
   .catch((err) => console.error('Connection error:', err));
 
