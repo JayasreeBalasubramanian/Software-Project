@@ -407,6 +407,8 @@ app.get(/(.*)/, (req, res) => {
   res.status(404).send('Page not found');
 });
 
-app.listen(3000, () => {
+/*app.listen(3000, () => {
   console.log('Server is running on http://localhost:3000');
-});
+});*/
+// ADD THIS AT THE VERY BOTTOM INSTEAD:
+module.exports = app;
